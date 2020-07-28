@@ -16,6 +16,12 @@
     </header>
 
     <main>
+
+      <?php if (isset($_GET['update_room'])){ ?>
+        <h4> Aggiornamento della stanza nr <?php echo $_GET['update_room']; ?> effettuato con successo</h4>
+
+      <?php } ?>
+
       <table>
 
         <thead>
@@ -32,7 +38,18 @@
             <td><?php echo $room['id']; ?></td>
             <td><?php echo $room['room_number'] ?></td>
             <td><?php echo $room['floor'] ?></td>
-            <td><a href="<?php echo $basePath . '/show/show.php?id=' . $room['id']; ?>">View</a></td>
+            <!-- Collegamento Mostra -->
+            <td><a href="<?php echo $basePath . '/show/show.php?id=' . $room['id']; ?>">Visualizza</a></td>
+            <!-- Collegamento Aggiorna -->
+            <td><a href="<?php echo $basePath . '/update/edit.php?id='.$room['id']; ?>">Aggiorna</a></td>
+            <!-- Collegamento Elimina -->
+            <td><form action="<?php echo $basePath . '/delete/delete.php'; ?>" method="post">
+
+              <input type="hidden" name="form_id" value="<?php echo $room['id'] ?>">
+
+              <input type="submit" name="" value="Elimina">
+
+            </form></td>
           </tr>
           <!-- Fine Singola Stanza -->
         <?php } ?>

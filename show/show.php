@@ -19,10 +19,10 @@
       <h2>Stai vedendo la stanza numero: <?php echo $room['room_number']; ?></h2>
       <ul>
         <li>ID: <?php echo $room['id']; ?> </li>
-        <li>Room number: <?php echo $room['room_number']; ?></li>
-        <li>Room floor: <?php echo $room['floor']; ?></li>
-        <li>Beds: <?php echo $room['beds']; ?></li>
-        <li>Created at: <?php echo $room['created_at']; ?></li>
+        <li>Numero stanza: <?php echo $room['room_number']; ?></li>
+        <li>Piano: <?php echo $room['floor']; ?></li>
+        <li>Letti: <?php echo $room['beds']; ?></li>
+        <li>Creato il: <?php echo $room['created_at']; ?></li>
       </ul>
     </main>
 
